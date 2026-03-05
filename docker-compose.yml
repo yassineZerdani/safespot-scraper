@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  scraper:
+    build: .
+    container_name: safespot_scraper
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - safespot_network
+
+networks:
+  safespot_network:
+    external: true
